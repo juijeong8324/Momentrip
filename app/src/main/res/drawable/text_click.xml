@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#000000" android:state_selected="true"/>
+    <item android:color="#A3A3A3" android:state_selected="false" />
+</selector>
+<!-- 이 파일은 폴라로이드 앨범 화면에서 텍스트를 클릭하면 색깔이 변하도록 -->
