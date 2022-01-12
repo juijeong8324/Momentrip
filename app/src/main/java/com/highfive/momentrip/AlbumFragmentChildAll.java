@@ -11,7 +11,8 @@ import androidx.fragment.app.Fragment;
 public class AlbumFragmentChildAll extends Fragment {
     //이 프래그먼트는 My moment 전체 폴라로이드 부분입니다!
     public static AlbumFragmentChildAll newInstance(){
-           return new AlbumFragmentChildAll();
+
+        return new AlbumFragmentChildAll();
     }
 
    /* @Override

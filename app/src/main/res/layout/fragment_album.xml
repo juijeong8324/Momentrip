@@ -40,7 +40,7 @@
                 android:fontFamily="@font/notosansbold"
                 android:includeFontPadding="false"
                 android:text="제주도"
-                android:textColor="@color/text1"
+                android:textColor="@drawable/text_click"
                 android:textSize="20dp"
                 app:backgroundTint="@color/white" />
 
@@ -52,7 +52,7 @@
                 android:fontFamily="@font/notosansbold"
                 android:includeFontPadding="false"
                 android:text="강릉"
-                android:textColor="#A3A3A3"
+                android:textColor="@drawable/text_click"
                 android:textSize="20dp"
                 app:backgroundTint="#FFFFFF" />
 

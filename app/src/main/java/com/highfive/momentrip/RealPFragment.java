@@ -1,24 +1,19 @@
 package com.highfive.momentrip;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class RealPFragment extends Fragment {
-//    MainActivity activity; // MainActivity와 연동
-
-    //액티비티에 대한 참조 얻기 = 프래그먼트가 액티비티로 올라오는 순간의 메소드임!
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-//        activity = (MainActivity) getActivity();
-
+    // 각 폴라로이드를 클릭했을 때 나오는 사진첩 프래그먼트입니다!
+    public static RealPFragment newInstance(){
+        return new RealPFragment();
     }
 
     @Nullable
@@ -31,15 +26,12 @@ public class RealPFragment extends Fragment {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                activity.ClickPola();
+                Intent intent = new Intent(getActivity().getApplicationContext(), PolaActivity.class);
+                startActivity(intent);
             }
         });
 
         return rootView;
     }
 
-    // 인터페이스
-    public interface ClickPolaListener{
-        public void ClickPola();
-    }
 }
