@@ -4,8 +4,16 @@ import android.util.Log;
 
 import com.highfive.momentrip.data.model.BookAllResult;
 import com.highfive.momentrip.data.model.BookResult;
+import com.highfive.momentrip.data.model.LoginRequest;
+import com.highfive.momentrip.data.model.LoginResponse;
 import com.highfive.momentrip.data.model.MomentResult;
+import com.highfive.momentrip.data.model.SignupRequest;
+import com.highfive.momentrip.data.model.SignupResponse;
 
+import java.util.Map;
+
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,6 +30,52 @@ public class Remote {
 
     // Request 메소드들을 작성해놓은 인터페이스 객체
     private MomentripService momentService = retrofit.create(MomentripService.class);
+
+    /*Auth API 관련 */
+    //회원가입
+    public void signup(SignupRequest request, Remote.GetDataCallback<SignupResponse> callback) {
+        // 인터페이스 구현
+        momentService.signup(request).enqueue(new Callback<SignupResponse>() {
+            @Override
+            public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) { // 요청 성공
+                if (response.isSuccessful()) {
+                    callback.onSuccess(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<SignupResponse> call, Throwable t) { // 요청 실패
+                callback.onFailure(t);
+            }
+        });
+    }
+
+    /*User API 관련*/
+    //로그인
+    public void login(LoginRequest request, Remote.GetDataCallback<LoginResponse> callback) {
+        // 인터페이스 구현
+        momentService.login(request).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if (response.isSuccessful()) { callback.onSuccess(response.body()); }
+            }
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) { callback.onFailure(t); }
+        });
+    }
+
+    // GET User By id
+    public void getUserById(String userId, Remote.GetDataCallback<SignupResponse> callback) {
+        // 인터페이스 구현
+        momentService.getUserById(userId).enqueue(new Callback<SignupResponse>() {
+            @Override
+            public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
+                if (response.isSuccessful()) { callback.onSuccess(response.body()); }
+            }
+            @Override
+            public void onFailure(Call<SignupResponse> call, Throwable t) { callback.onFailure(t); }
+        });
+    }
+
 
     /** Book API 관련 **/
     // 해당 book id의 book 데이터 수집
@@ -45,7 +99,6 @@ public class Remote {
         momentService.getUserBook(user_id).enqueue(new Callback<BookAllResult>() {
             @Override
             public void onResponse(Call<BookAllResult> call, Response<BookAllResult> response) {
-                Log.v("뿌꾸뿌꾸","성공");
                 if(response.isSuccessful()) {callback.onSuccess(response.body());}
             }
 

@@ -8,29 +8,31 @@ import android.view.View;
 import android.widget.Button;
 
 public class LoginActivity1 extends AppCompatActivity {
+    Button loginButton;
+    Button signupButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.highfive.momentrip.R.layout.activity_login1);
+        setContentView(R.layout.activity_login1);
 
-        Button button = findViewById(com.highfive.momentrip.R.id.loginButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        loginButton = (Button) findViewById(R.id.loginButton);
+        signupButton = findViewById(R.id.signupButton);
+
+        // 로그인 버튼 클릭
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity2.class);
-                startActivity(intent);
-
+                startActivity(new Intent(getApplicationContext(), LoginActivity2.class));
             }
         });
 
-        Button button2 = findViewById(com.highfive.momentrip.R.id.signupButton);
-        button2.setOnClickListener(new View.OnClickListener() {
+        // 회원가입 버튼 클릭
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SignupActivity1.class));
-
             }
         });
-
     }
 }

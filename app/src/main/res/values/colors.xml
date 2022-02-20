@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- 커스텀 컬러-->
     <color name="momentrip_main">#0285C9</color>
+    <color name="warning">#FF0101</color>
 
     <color name="text1">#191919</color>
     <color name="text2">#767676</color>
@@ -16,4 +18,6 @@
 
     <color name="line1">#DBDBDB</color>
     <color name="line2">#EDEDED</color>
+
+    <color name="transparent">#1A000000</color>
 </resources>
