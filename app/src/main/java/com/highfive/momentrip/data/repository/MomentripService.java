@@ -2,6 +2,7 @@ package com.highfive.momentrip.data.repository;
 
 import com.highfive.momentrip.data.model.BookAllResult;
 import com.highfive.momentrip.data.model.BookResult;
+import com.highfive.momentrip.data.model.CategoryAllResult;
 import com.highfive.momentrip.data.model.LoginRequest;
 import com.highfive.momentrip.data.model.LoginResponse;
 import com.highfive.momentrip.data.model.MomentResult;
@@ -48,7 +49,11 @@ public interface MomentripService {
     @GET("book/select/{id}")  // 해당 book id의 book 데이터 수집
     Call<BookResult> getBook(@Path("id") int bookId);
 
-    @GET("book/select/user/{user_id}") // 해당 user id의 book 데이터 수집
+    @GET("book/user/{user_id}") // 해당 user id의 book 데이터 수집
     Call<BookAllResult> getUserBook(@Path("user_id") int userId);
+
+    // Category API
+    @GET("category/{user_id}") // 해당 유저 id의 category 가져오기
+    Call<CategoryAllResult> getUserCategory(@Path("user_id") int userId);
 
 }

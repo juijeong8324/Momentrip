@@ -30,67 +30,10 @@
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:orientation="horizontal"
+            android:id = "@+id/category_linear"
             >
 
-            <TextView
-                android:id="@+id/jeju"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="13dp"
-                android:fontFamily="@font/notosansbold"
-                android:includeFontPadding="false"
-                android:text="제주도"
-                android:textColor="@drawable/text_click"
-                android:textSize="20dp"
-                app:backgroundTint="@color/white" />
 
-            <TextView
-                android:id="@+id/kang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="13dp"
-                android:fontFamily="@font/notosansbold"
-                android:includeFontPadding="false"
-                android:text="강릉"
-                android:textColor="@drawable/text_click"
-                android:textSize="20dp"
-                app:backgroundTint="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/alone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="13dp"
-                android:fontFamily="@font/notosansbold"
-                android:includeFontPadding="false"
-                android:text="나홀로 여행"
-                android:textColor="#A3A3A3"
-                android:textSize="20dp"
-                app:backgroundTint="@color/white" />
-
-            <TextView
-                android:id="@+id/parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="13dp"
-                android:fontFamily="@font/notosansbold"
-                android:includeFontPadding="false"
-                android:text="효도여행"
-                android:textColor="#A3A3A3"
-                android:textSize="20dp"
-                app:backgroundTint="@color/white" />
-
-            <TextView
-                android:id="@+id/today"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="13dp"
-                android:fontFamily="@font/notosansbold"
-                android:includeFontPadding="false"
-                android:text="당일치기"
-                android:textColor="#A3A3A3"
-                android:textSize="20dp"
-                app:backgroundTint="@color/white" />
 
         </LinearLayout>
     </HorizontalScrollView>

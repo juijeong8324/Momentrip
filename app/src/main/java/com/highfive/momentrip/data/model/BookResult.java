@@ -18,12 +18,28 @@ public class BookResult {
     @SerializedName("book_img")
     private String book_img;
 
+    @SerializedName("CategoryId")
+    private int categoryId;
+
+    @SerializedName("book_hit")
+    private int book_hit;
+
+    @SerializedName("trip_start_date")
+    private String trip_start_date;
+
+    @SerializedName("trip_end_date")
+    private String trip_end_date;
+
     // 생성자
-    public BookResult(int book_id, int user_id, String book_title, String book_img) {
+    public BookResult(int book_id, int user_id, String book_title, String book_img, int categoryId, int book_hit, String trip_start_date, String trip_end_date) {
         this.book_id = book_id;
         this.user_id = user_id;
         this.book_title = book_title;
         this.book_img = book_img;
+        this.categoryId = categoryId;
+        this.book_hit = book_hit;
+        this.trip_start_date = trip_start_date;
+        this.trip_end_date = trip_end_date;
     }
 
     public int getBook_id() {
@@ -58,7 +74,35 @@ public class BookResult {
         this.book_img = book_img;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
 
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 
+    public int getBook_hit() {
+        return book_hit;
+    }
 
+    public void setBook_hit(int book_hit) {
+        this.book_hit = book_hit;
+    }
+
+    public String getTrip_start_date() {
+        return trip_start_date;
+    }
+
+    public void setTrip_start_date(String trip_start_date) {
+        this.trip_start_date = trip_start_date;
+    }
+
+    public String getTrip_end_date() {
+        return trip_end_date;
+    }
+
+    public void setTrip_end_date(String trip_end_date) {
+        this.trip_end_date = trip_end_date;
+    }
 }

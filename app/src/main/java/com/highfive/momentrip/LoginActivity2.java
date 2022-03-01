@@ -48,7 +48,7 @@ public class LoginActivity2 extends AppCompatActivity {
                     public void onSuccess(LoginResponse data) {
                         SharedPreferences.Editor editor = preferences.edit(); // Editor를 preferences에 쓰겠다고 연결
                         editor.putString("token", data.getToken()); // putString(KEY,VALUE)
-                        editor.putInt("id", data.getUser().getId()); // User의 id도 preferences에 저장
+                        editor.putInt("ID", data.getUser().getId()); // User의 id도 preferences에 저장
                         editor.commit(); // 항상 commit & apply 를 해주어야 저장이 된다.
                         getPreferences(0); // 메소드 호출(mode:0 => 읽기, 쓰기 가능)
 

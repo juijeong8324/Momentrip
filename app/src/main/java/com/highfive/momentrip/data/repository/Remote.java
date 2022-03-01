@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.highfive.momentrip.data.model.BookAllResult;
 import com.highfive.momentrip.data.model.BookResult;
+import com.highfive.momentrip.data.model.CategoryAllResult;
 import com.highfive.momentrip.data.model.LoginRequest;
 import com.highfive.momentrip.data.model.LoginResponse;
 import com.highfive.momentrip.data.model.MomentResult;
@@ -150,6 +151,23 @@ public class Remote {
 
             @Override
             public void onFailure(Call<MomentResult> call, Throwable t) {
+                callback.onFailure(t);
+            }
+        });
+    }
+
+    /* Category API 관련 */
+    public void getUserCategory(int user_id, Remote.GetDataCallback<CategoryAllResult> callback) {
+        momentService.getUserCategory(user_id).enqueue(new Callback<CategoryAllResult>() {
+            @Override
+            public void onResponse(Call<CategoryAllResult> call, Response<CategoryAllResult> response) {
+                if (response.isSuccessful()) {
+                    callback.onSuccess(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoryAllResult> call, Throwable t) {
                 callback.onFailure(t);
             }
         });
