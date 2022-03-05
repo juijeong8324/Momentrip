@@ -52,6 +52,9 @@ public interface MomentripService {
     @GET("book/user/{user_id}") // 해당 user id의 book 데이터 수집
     Call<BookAllResult> getUserBook(@Path("user_id") int userId);
 
+    @GET("book/category/{category_id}") // 해당 category id의 book 데이터 수집
+    Call<BookAllResult> getCategoryBook(@Path("category_id") int categoryId);
+
     // Category API
     @GET("category/{user_id}") // 해당 유저 id의 category 가져오기
     Call<CategoryAllResult> getUserCategory(@Path("user_id") int userId);

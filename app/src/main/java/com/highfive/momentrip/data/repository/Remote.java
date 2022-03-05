@@ -110,6 +110,21 @@ public class Remote {
         });
     }
 
+    // 해당 카테고리의 book 데이터 수집
+    public void getCategoryBook(int category_id, Remote.GetDataCallback<BookAllResult> callback){
+        momentService.getUserBook(category_id).enqueue(new Callback<BookAllResult>() {
+            @Override
+            public void onResponse(Call<BookAllResult> call, Response<BookAllResult> response) {
+                if(response.isSuccessful()) {callback.onSuccess(response.body());}
+            }
+
+            @Override
+            public void onFailure(Call<BookAllResult> call, Throwable t) {
+                callback.onFailure(t);
+            }
+        });
+    }
+
     /*Moment API 관련 */
     // 해당 id를 가진 모멘트만 부름
     public void getMoment(int moment_id, Remote.GetDataCallback<MomentResult> callback){

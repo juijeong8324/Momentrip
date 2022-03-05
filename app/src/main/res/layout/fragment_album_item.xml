@@ -29,29 +29,7 @@
                 />
 
         </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/click_pola2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
-            android:layout_marginLeft="30dp">
-
-            <ImageView
-                android:layout_width="167dp"
-                android:layout_height="197.17dp"
-                android:background="@drawable/photo" />
-
-            <ImageView
-                android:id="@+id/click_pola_img2"
-                android:layout_width="133.36dp"
-                android:layout_height="133.36dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="27dp"
-                android:background="@color/white"
-                />
-
-        </FrameLayout>
+        
     </LinearLayout>
 
 </LinearLayout>
